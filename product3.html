@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Haider E-Commerce Website</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script><link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="/web.css">
+</head>
+<body style="overflow-x: hidden;">
+
+
+  
+    
+    <!-- linking the stylesheet(CSS) -->
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  
+    
+    
+   
+
+  
+
+<style>
+  #searchbar{
+	margin-left: 15%;
+	padding:15px;
+	border-radius: 10px;
+}
+
+input[type=text] {
+	width: 70%;
+	-webkit-transition: width 0.15s ease-in-out;
+	transition: width 0.15s ease-in-out;
+}
+
+/* When the input field gets focus,
+		change its width to 100% */
+input[type=text]:focus {
+	width: 80%;
+}
+
+#list{
+	font-size: 1.5em;
+	margin-left: 90px;
+}
+
+.animals{
+display: list-item;	
+}
+
+
+
+</style>
+
+<script>
+  // JavaScript code
+function search_animal() {
+	let input = document.getElementById('searchbar').value
+	input=input.toLowerCase();
+	let x = document.getElementsByClassName('animals');
+	
+	for (i = 0; i < x.length; i++) {
+		if (!x[i].innerHTML.toLowerCase().includes(input)) {
+			x[i].style.display="none";
+		}
+		else {
+			x[i].style.display="list-item";				
+		}
+	}
+}
+
+</script>
+
+
+
+
+
+
+<div class="row" >
+  <div class="col">
+    <button style="float: right;" type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Cart (<span class="total-count"></span>)</button><button class="clear-cart btn btn-danger" style="float: right;">Clear Cart</button></div>
+</div>
+
+<br><br>
+
+<h1>MyNew Website </h1>
+<p style="width: 70%;margin: auto;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem minus magnam minima aliquam, ea ullam saepe ipsa quisquam maxime, itaque ab ad sit dolor
+  Lorem ipsum dolor sit amet consectetur.</p>
+<br>
+<input id="searchbar" onkeyup="search_product()" type="text"
+name="search" placeholder="Search Products..">
+
+<br><br>
+<p style="width: 70%;margin: auto;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem minus magnam minima aliquam, ea ullam saepe ipsa quisquam maxime, itaque ab ad sit dolor
+  Lorem ipsum dolor sit amet consectetur.</p>
+
+</div>
+<br><br>
+
+<h1 style="font-size: 40px; color: blue;" >Products </h1>
+<script>
+  // JavaScript code
+function search_product() {
+	let input = document.getElementById('searchbar').value
+	input=input.toLowerCase();
+	let x = document.getElementsByClassName('card-title');
+	
+	for (i = 0; i < x.length; i++) {
+		if (!x[i].innerHTML.toLowerCase().includes(input)) {
+			x[i].style.display="none";
+		}
+		else {
+			x[i].style.display="list-item";				
+		}
+	}
+}
+
+</script>
+
+
+<!-- Main -->
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="card" style="width: 20rem;">
+  <img class="card"   src="/1.jpg" alt="Card image cap">
+  <div class="card-block">
+   
+    <h4 class="card-title">  Golden Watch</h4>
+    <p class="card-text">Price: $20</p>
+<center>    
+    <a href="#"  data-name="Golden Watch" data-price="20" class="add-to-cart btn btn-primary"> Add to cart</a>
+  </center>
+
+  </div>
+</div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 20rem;">
+  <img class="card2"  src="/2.jpg">
+  <div class="card-block">
+    <h4 class="card-title">Apple Watch</h4>
+    <p class="card-text">Price: $100</p>
+    <center>
+    <a href="#" data-name="Apple Watch" data-price="100" class="add-to-cart btn btn-primary">Add to cart</a>
+  </center>
+  </div>
+</div>
+      </div>
+      <div class="col">
+        <div class="card" style="width: 20rem;">
+  <img class="card3" src="/3.jpg" alt="Card image cap">
+  <div class="card-block">
+    <h4 class="card-title">Black Watch</h4>
+    <p class="card-text">Price: $5</p>
+    <center>
+    <a href="#" data-name="Black Watch" data-price="30" class="add-to-cart btn btn-primary">Add to cart</a>
+  </center>
+  </div>
+</div>
+      </div>
+    </div>
+</div>
+
+  
+ <!-- Modal -->
+<div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <table class="show-cart table">
+          
+        </table>
+        <div>Total price: $<span class="total-cart"></span></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Order now</button>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+    #pegination li{
+      width: 100px;
+    
+    }
+   
+  </style>
+<nav aria-label="Page navigation example">
+  <ul  id="pegination"  class="pagination justify-content-center">
+    <li class="page-item"><a style="background-color: blue; color: white; font-size: 15px;border: 2px solid white;" class="page-link" href="product2.html">Previous</a></li>
+    <li class="page-item"><a style="background-color: blue; color: white; font-size: 15px;border: 2px solid white;" class="page-link" href="product1.html">1</a></li>
+    <li class="page-item"><a style="background-color: blue; color: white; font-size: 15px;border: 2px solid white;" class="page-link" href="product2.html">2</a></li>
+    <li class="page-item"><a style="background-color: orange; color: white; font-size: 15px;border: 2px solid white;" class="page-link" href="product3.html">3</a></li>
+    <li class="page-item"><a style="background-color: blue; color: white; font-size: 15px;border: 2px solid white;" class="page-link" href="#">Next</a></li>
+  </ul>
+</nav>
+
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script><script  src="./script.js"></script>
+  <footer>
+    <div class="containerfooter">
+    <h1>Powered By Faizan Asif </h1>
+    <h3 style="text-align: center;font-family: Arial, Helvetica, sans-serif;font-size: 18px;">© copyright mywebsite 2021</h3>
+    </div>
+    </footer>
+</body>
+</html>
